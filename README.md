@@ -36,7 +36,7 @@ Find some valuable scripts and payloads that can be used for various security as
 
 ## Command Line Tips
 A collection of command line tips that will enhance your pentesting workflow:
-- **[Tip 1: Description](https://your-script-link.com)**
+- **[Tip 1: Description](https://infosecsamurai.github.io/cmd-reference-guide/#secret-commands)**
 - **[Tip 2: Description](https://your-script-link.com)**
 
 ## Contact
