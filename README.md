@@ -1,4 +1,4 @@
-# The Digital Dojo
+8# The Digital Dojo
 
 **Welcome to The Digital Dojo** - a digital sanctuary dedicated to the art of ethical hacking and cybersecurity. Here, you will find projects, scripts, tools, and resources that embody my passion for securing the digital realm.
 
@@ -36,7 +36,7 @@ Find some valuable scripts and payloads that can be used for various security as
 
 ## Command Line Tips
 A collection of command line tips that will enhance your pentesting workflow:
-- **[Tip 1: Description](https://infosecsamurai.github.io/cmd-reference-guide/#secret-commands)**
+- **[https://infosecsamurai.github.io/cmd-reference-guide/#secret-commands](https://infosecsamurai.github.io/cmd-reference-guide/#secret-commands)**
 - **[Tip 2: Description](https://your-script-link.com)**
 
 ## Contact
