@@ -1,4 +1,4 @@
-8# The Digital Dojo
+# The Digital Dojo
 
 **Welcome to The Digital Dojo** - a digital sanctuary dedicated to the art of ethical hacking and cybersecurity. Here, you will find projects, scripts, tools, and resources that embody my passion for securing the digital realm.
 
