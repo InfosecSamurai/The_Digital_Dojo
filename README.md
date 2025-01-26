@@ -26,7 +26,7 @@ Here are some of the exciting projects I've been working on:
 
 ## Books
 A curated list of books that inspire and educate the aspiring cybersecurity professional:
-- **[Book 1: PenTesters Cookbook](https://your-book-link.com)**
+- **[Book 1: PenTesters Cookbook](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/)**
 - **[Book 2: Web Developers Handbook](https://your-book-link.com)**
 
 ## Scripts & Payloads
